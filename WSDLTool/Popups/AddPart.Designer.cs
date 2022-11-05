@@ -70,6 +70,7 @@
             this.cboMessageType.Name = "cboMessageType";
             this.cboMessageType.Size = new System.Drawing.Size(222, 24);
             this.cboMessageType.TabIndex = 3;
+            this.cboMessageType.SelectedIndexChanged += new System.EventHandler(this.cboMessageType_SelectedIndexChanged);
             // 
             // btnBrowse
             // 

@@ -87,11 +87,29 @@
     <Compile Include="Helpers\ucLists.cs" />
     <Compile Include="Helpers\ucParamLists.cs" />
     <Compile Include="Helpers\xsd.cs" />
+    <Compile Include="Popups\AddBinding.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddBinding.Designer.cs">
+      <DependentUpon>AddBinding.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\AddComplexType_popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddComplexType_popup.Designer.cs">
+      <DependentUpon>AddComplexType_popup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popups\AddElement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Popups\AddElement.Designer.cs">
       <DependentUpon>AddElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\AddElement_popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddElement_popup.Designer.cs">
+      <DependentUpon>AddElement_popup.cs</DependentUpon>
     </Compile>
     <Compile Include="Popups\AddMessage.cs">
       <SubType>Form</SubType>
@@ -123,11 +141,41 @@
     <Compile Include="Popups\AddPortTypeOperation.Designer.cs">
       <DependentUpon>AddPortTypeOperation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popups\AddService.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddService.Designer.cs">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\AddSimpleType_popup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddSimpleType_popup.Designer.cs">
+      <DependentUpon>AddSimpleType_popup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\PopupForType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\PopupForType.Designer.cs">
+      <DependentUpon>PopupForType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\portPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\portPopup.Designer.cs">
+      <DependentUpon>portPopup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popups\ShowElement.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Popups\ShowElement.Designer.cs">
       <DependentUpon>ShowElement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Popups\ShowType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\ShowType.Designer.cs">
+      <DependentUpon>ShowType.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -146,8 +194,17 @@
     <EmbeddedResource Include="Froms\PropertiesForm.resx">
       <DependentUpon>PropertiesForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddBinding.resx">
+      <DependentUpon>AddBinding.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddComplexType_popup.resx">
+      <DependentUpon>AddComplexType_popup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Popups\AddElement.resx">
       <DependentUpon>AddElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddElement_popup.resx">
+      <DependentUpon>AddElement_popup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popups\AddMessage.resx">
       <DependentUpon>AddMessage.cs</DependentUpon>
@@ -164,8 +221,23 @@
     <EmbeddedResource Include="Popups\AddPortTypeOperation.resx">
       <DependentUpon>AddPortTypeOperation.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddService.resx">
+      <DependentUpon>AddService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddSimpleType_popup.resx">
+      <DependentUpon>AddSimpleType_popup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\PopupForType.resx">
+      <DependentUpon>PopupForType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\portPopup.resx">
+      <DependentUpon>portPopup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Popups\ShowElement.resx">
       <DependentUpon>ShowElement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\ShowType.resx">
+      <DependentUpon>ShowType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

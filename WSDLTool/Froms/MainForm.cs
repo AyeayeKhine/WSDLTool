@@ -44,8 +44,13 @@ namespace WSDLTool.Froms
             tblPanelPortType.Visible = false;
             panelType.Visible = true;
             tblPanelType.Visible = true;
+          //  AddElement_alreadyType addElement_AlreadyType =new AddElement_alreadyType(this);
             AddElement addElement = new AddElement(this);
-            addElement.ShowDialog();
+            //addElement.ShowDialog();
+         //   contextMenuStrip1 contextMenuStrip1 = new ContextMenuStrip();
+            //addElement_AlreadyType.ShowDialog();
+            PopupForType popupForType = new PopupForType(this);
+            popupForType.ShowDialog();
         }
         public void addElementItem_Click(object sender, EventArgs e)
         {
@@ -173,14 +178,16 @@ namespace WSDLTool.Froms
         #region Bindings
         private void btnBinding_Click(object sender, EventArgs e)
         {
-
+            AddBinding addBinding = new AddBinding(this);
+            addBinding.ShowDialog();
         }
         #endregion
 
         #region Services
         private void btnService_Click(object sender, EventArgs e)
         {
-
+            AddService addService = new AddService(this);
+            addService.ShowDialog();
         }
         #endregion
 

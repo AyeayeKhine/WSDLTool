@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.panelDropdown = new System.Windows.Forms.Panel();
             this.btnService = new System.Windows.Forms.Button();
@@ -60,6 +61,7 @@
             this.btnPortTypeExport = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tableLayoutPanel1.SuspendLayout();
             this.panelDropdown.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -432,6 +434,11 @@
             this.label4.Text = "PortType";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 26);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -486,5 +493,6 @@
         private System.Windows.Forms.Button btnPortTypeShow;
         private System.Windows.Forms.Button btnPortTypeExport;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
     }
 }

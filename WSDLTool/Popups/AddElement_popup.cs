@@ -7,13 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using WSDLTool.Controls;
 using WSDLTool.Froms;
-using WSDLTool.Helpers;
 
 namespace WSDLTool.Popups
 {
-    public partial class AddPart : Form
+    public partial class AddElement_popup : Form
     {
         public MainForm mainForm;
         public Control controls;
@@ -23,44 +21,33 @@ namespace WSDLTool.Popups
             "anyType",
             "anyURI","base64Binary","boolean","byte","date","dateTime","decimal","double","duration","ENTITIES","ENTITY","float","gDay","gMonth","gMonthDay","gYear","gYearMonth","hexBinary","ID","IDREF","IDREFS","integer","language","long","normalizedString","Name","NCName","negativeInteger","NMTOKEN","NMTOKENS","nonNegativeInteger","nonPositiveInteger","NOTATION","positiveInteger","QName","short","string","time","token","unsignedByte","unsignedInt","unsignedShort","unsignedLong",
          };
-        public int parentId;
-        public AddPart()
+        public AddElement_popup()
         {
             InitializeComponent();
         }
-        public AddPart(MainForm _Main, Control _Control)
+        public AddElement_popup(MainForm _Main)
         {
             InitializeComponent();
             mainForm = _Main;
-            controls = _Control;
+           // controls = _Control;
             foreach (string type in types)
             {
-                cboMessageType.Items.Add(type);
+                cboBuiltin_type.Items.Add(type);
             }
         }
-        private void btnOK_Click(object sender, EventArgs e)
+
+       
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
-            var msgEle = (uc_Message)controls;
-            int id = msgEle.ID;
-            if(msgEle.Part == null)
-            {
-                msgEle.Part = new Helpers.parts();
-            }
-            msgEle.Part.ParameterName = txtParamName.Text;
-            msgEle.Part.EleType = cboMessageType.Text;
-            uc_Message uc_ = new uc_Message(mainForm, msgEle);
-            this.Close();
+
         }
 
-        private void btnBrowse_Click(object sender, EventArgs e)
+        private void btn_definedType_Click(object sender, EventArgs e)
         {
-            ShowElement showElement = new ShowElement(this);
-            showElement.ShowDialog();
-        }
-
-        private void cboMessageType_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            ShowType showType = new ShowType();
+            // ShowElement showElement = new ShowElement(this);
+            showType.ShowDialog();
         }
     }
 }
