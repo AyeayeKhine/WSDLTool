@@ -265,5 +265,8 @@
   <ItemGroup>
     <Folder Include="Resouces\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="TextFile.txt" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
