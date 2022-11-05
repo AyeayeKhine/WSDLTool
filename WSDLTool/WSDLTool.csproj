@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\uc_ComplexType.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\uc_ComplexType.Designer.cs">
+      <DependentUpon>uc_ComplexType.cs</DependentUpon>
+    </Compile>
     <Compile Include="Controls\uc_Element.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -179,6 +185,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Controls\uc_ComplexType.resx">
+      <DependentUpon>uc_ComplexType.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Controls\uc_Element.resx">
       <DependentUpon>uc_Element.cs</DependentUpon>
     </EmbeddedResource>

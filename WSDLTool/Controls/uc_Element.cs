@@ -19,6 +19,7 @@ namespace WSDLTool.Controls
         private string dataType;
         private string responseDataType;
         private ucParamLists param;
+        private uc_ComplexType uc_complextype;
         private string paramName;
         public int ID { get => id; set => id = value; }
         public int Reqid { get => reqid; set => reqid = value; }
@@ -46,6 +47,8 @@ namespace WSDLTool.Controls
                 }
             }
         }
+
+        public uc_ComplexType Uc_complextype { get => uc_complextype; set => uc_complextype = value; }
 
         public uc_Element()
         {
