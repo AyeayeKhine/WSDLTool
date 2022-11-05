@@ -15,9 +15,10 @@ namespace WSDLTool.Controls
     public partial class uc_PortType : UserControl
     {
         private int id;
+
         private string name;
         private List<OperationType> operationType;
-        public int Id { get => id; set => id = value; }
+        public int Id { get => Id; set => Id = value; }
         public string Name1 { get => name; set => name = value; }
         public List<OperationType> OperationType
         {
@@ -34,6 +35,8 @@ namespace WSDLTool.Controls
                 }
             }
         }
+
+        public int Id1 { get => id; set => id = value; }
 
         public uc_PortType()
         {
