@@ -20,7 +20,6 @@ namespace WSDLTool.Popups
         public AddComplexType_popup(MainForm _Main)
         {
             InitializeComponent();
-           
         }
     }
 }
