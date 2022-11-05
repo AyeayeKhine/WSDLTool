@@ -117,6 +117,12 @@
     <Compile Include="Popups\AddElement_popup.Designer.cs">
       <DependentUpon>AddElement_popup.cs</DependentUpon>
     </Compile>
+    <Compile Include="Popups\AddExistingElements.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Popups\AddExistingElements.Designer.cs">
+      <DependentUpon>AddExistingElements.cs</DependentUpon>
+    </Compile>
     <Compile Include="Popups\AddMessage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -214,6 +220,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Popups\AddElement_popup.resx">
       <DependentUpon>AddElement_popup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Popups\AddExistingElements.resx">
+      <DependentUpon>AddExistingElements.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Popups\AddMessage.resx">
       <DependentUpon>AddMessage.cs</DependentUpon>

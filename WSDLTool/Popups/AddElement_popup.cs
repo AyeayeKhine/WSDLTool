@@ -43,11 +43,18 @@ namespace WSDLTool.Popups
 
         }
 
-        private void btn_definedType_Click(object sender, EventArgs e)
+      
+
+        private void type_browse_Click(object sender, EventArgs e)
         {
             ShowType showType = new ShowType();
             // ShowElement showElement = new ShowElement(this);
             showType.ShowDialog();
+        }
+
+        private void btn_OKi_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

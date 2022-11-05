@@ -51,6 +51,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.type_browse = new System.Windows.Forms.Button();
+            this.btn_OKi = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -98,7 +100,6 @@
             this.btn_definedType.TabIndex = 6;
             this.btn_definedType.Text = "---";
             this.btn_definedType.UseVisualStyleBackColor = true;
-            this.btn_definedType.Click += new System.EventHandler(this.btn_definedType_Click);
             // 
             // groupBox1
             // 
@@ -283,16 +284,38 @@
             this.groupBox2.Controls.Add(this.btn_ok);
             this.groupBox2.Location = new System.Drawing.Point(5, 188);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(322, 305);
+            this.groupBox2.Size = new System.Drawing.Size(322, 292);
             this.groupBox2.TabIndex = 8;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "groupBox2";
+            // 
+            // type_browse
+            // 
+            this.type_browse.Location = new System.Drawing.Point(305, 41);
+            this.type_browse.Name = "type_browse";
+            this.type_browse.Size = new System.Drawing.Size(34, 23);
+            this.type_browse.TabIndex = 9;
+            this.type_browse.Text = "---";
+            this.type_browse.UseVisualStyleBackColor = true;
+            this.type_browse.Click += new System.EventHandler(this.type_browse_Click);
+            // 
+            // btn_OKi
+            // 
+            this.btn_OKi.Location = new System.Drawing.Point(252, 486);
+            this.btn_OKi.Name = "btn_OKi";
+            this.btn_OKi.Size = new System.Drawing.Size(75, 23);
+            this.btn_OKi.TabIndex = 21;
+            this.btn_OKi.Text = "OK";
+            this.btn_OKi.UseVisualStyleBackColor = true;
+            this.btn_OKi.Click += new System.EventHandler(this.btn_OKi_Click);
             // 
             // AddElement_popup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 505);
+            this.ClientSize = new System.Drawing.Size(339, 513);
+            this.Controls.Add(this.btn_OKi);
+            this.Controls.Add(this.type_browse);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox1);
@@ -336,5 +359,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button type_browse;
+        private System.Windows.Forms.Button btn_OKi;
     }
 }
