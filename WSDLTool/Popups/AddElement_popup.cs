@@ -66,12 +66,16 @@ namespace WSDLTool.Popups
                 gpBoxElement.Location = new Point(12, 233);
                 lblType.Visible = false;
                 cboBuiltin_type.Visible = false;
+                btn_definedType.Visible = false;
                 this.Size = new Size(355, 270);
             }
             else
             {
                 gpBoxElement.Visible = true;
                 gpBoxType.Visible = false;
+                lblType.Visible = true;
+                cboBuiltin_type.Visible = true;
+                btn_definedType.Visible = true;
                 gpBoxElement.Location = new Point(12, 138);
                 this.Size = new Size(355, 500);
             }
@@ -98,7 +102,7 @@ namespace WSDLTool.Popups
                     DataType = cboBuiltin_type.Text,
                     MinOcc = txtMinOccours.Text,
                     MaxOcc = txtMaxOccours.Text,
-                    //Note = txtNote.Text,
+                    Note = txtNote.Text,
                     IsComplexType = false,
                 };
             }

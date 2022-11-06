@@ -49,7 +49,9 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cboForm = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.txtNote = new System.Windows.Forms.RichTextBox();
             this.gpBoxElement = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
             this.gpBoxType.SuspendLayout();
             this.gpBoxElement.SuspendLayout();
             this.SuspendLayout();
@@ -86,14 +88,14 @@
             this.cboBuiltin_type.FormattingEnabled = true;
             this.cboBuiltin_type.Location = new System.Drawing.Point(131, 76);
             this.cboBuiltin_type.Name = "cboBuiltin_type";
-            this.cboBuiltin_type.Size = new System.Drawing.Size(169, 21);
+            this.cboBuiltin_type.Size = new System.Drawing.Size(135, 21);
             this.cboBuiltin_type.TabIndex = 5;
             // 
             // btn_definedType
             // 
-            this.btn_definedType.Location = new System.Drawing.Point(149, 208);
+            this.btn_definedType.Location = new System.Drawing.Point(262, 75);
             this.btn_definedType.Name = "btn_definedType";
-            this.btn_definedType.Size = new System.Drawing.Size(42, 23);
+            this.btn_definedType.Size = new System.Drawing.Size(39, 23);
             this.btn_definedType.TabIndex = 6;
             this.btn_definedType.Text = "---";
             this.btn_definedType.UseVisualStyleBackColor = true;
@@ -256,8 +258,17 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Annotation:";
             // 
+            // txtNote
+            // 
+            this.txtNote.Location = new System.Drawing.Point(131, 179);
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(169, 100);
+            this.txtNote.TabIndex = 20;
+            this.txtNote.Text = "";
+            // 
             // gpBoxElement
             // 
+            this.gpBoxElement.Controls.Add(this.txtNote);
             this.gpBoxElement.Controls.Add(this.label7);
             this.gpBoxElement.Controls.Add(this.radioButton2);
             this.gpBoxElement.Controls.Add(this.txtEleValue);
@@ -266,23 +277,33 @@
             this.gpBoxElement.Controls.Add(this.radioButton1);
             this.gpBoxElement.Controls.Add(this.label6);
             this.gpBoxElement.Controls.Add(this.label5);
-            this.gpBoxElement.Controls.Add(this.btn_definedType);
             this.gpBoxElement.Controls.Add(this.label3);
             this.gpBoxElement.Controls.Add(this.txtMaxOccours);
             this.gpBoxElement.Controls.Add(this.txtMinOccours);
             this.gpBoxElement.Controls.Add(this.btn_ok);
             this.gpBoxElement.Location = new System.Drawing.Point(12, 233);
             this.gpBoxElement.Name = "gpBoxElement";
-            this.gpBoxElement.Size = new System.Drawing.Size(322, 268);
+            this.gpBoxElement.Size = new System.Drawing.Size(322, 280);
             this.gpBoxElement.TabIndex = 8;
             this.gpBoxElement.TabStop = false;
             this.gpBoxElement.Text = "Element Value";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(12, 7);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(47, 24);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // AddElement_popup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 513);
+            this.Controls.Add(this.btnSave);
             this.Controls.Add(this.gpBoxElement);
             this.Controls.Add(this.ckNestedType);
             this.Controls.Add(this.gpBoxType);
@@ -290,6 +311,7 @@
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.txtElementName);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.btn_definedType);
             this.Name = "AddElement_popup";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddElement_popup";
@@ -325,7 +347,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cboForm;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox txtNote;
         private System.Windows.Forms.GroupBox gpBoxElement;
+        private System.Windows.Forms.Button btnSave;
     }
 }
