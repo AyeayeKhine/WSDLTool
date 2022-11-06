@@ -30,36 +30,35 @@
         {
             this.txtElementName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblType = new System.Windows.Forms.Label();
             this.cboBuiltin_type = new System.Windows.Forms.ComboBox();
             this.btn_definedType = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.gpBoxType = new System.Windows.Forms.GroupBox();
             this.rSimpleType = new System.Windows.Forms.RadioButton();
             this.rComplexType = new System.Windows.Forms.RadioButton();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.ckNestedType = new System.Windows.Forms.CheckBox();
             this.btn_ok = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtEleValue = new System.Windows.Forms.TextBox();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtMinOccours = new System.Windows.Forms.TextBox();
+            this.txtMaxOccours = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboForm = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.type_browse = new System.Windows.Forms.Button();
-            this.btn_OKi = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.txtNote = new System.Windows.Forms.RichTextBox();
+            this.gpBoxElement = new System.Windows.Forms.GroupBox();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.gpBoxType.SuspendLayout();
+            this.gpBoxElement.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtElementName
             // 
-            this.txtElementName.Location = new System.Drawing.Point(130, 12);
+            this.txtElementName.Location = new System.Drawing.Point(130, 41);
             this.txtElementName.Name = "txtElementName";
             this.txtElementName.Size = new System.Drawing.Size(170, 20);
             this.txtElementName.TabIndex = 3;
@@ -68,26 +67,26 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(2, 12);
+            this.label1.Location = new System.Drawing.Point(14, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(99, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "ElementName :";
             // 
-            // label2
+            // lblType
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(2, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 16);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Type:";
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Location = new System.Drawing.Point(17, 81);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(42, 16);
+            this.lblType.TabIndex = 4;
+            this.lblType.Text = "Type:";
             // 
             // cboBuiltin_type
             // 
             this.cboBuiltin_type.FormattingEnabled = true;
-            this.cboBuiltin_type.Location = new System.Drawing.Point(130, 41);
+            this.cboBuiltin_type.Location = new System.Drawing.Point(131, 76);
             this.cboBuiltin_type.Name = "cboBuiltin_type";
             this.cboBuiltin_type.Size = new System.Drawing.Size(169, 21);
             this.cboBuiltin_type.TabIndex = 5;
@@ -101,22 +100,22 @@
             this.btn_definedType.Text = "---";
             this.btn_definedType.UseVisualStyleBackColor = true;
             // 
-            // groupBox1
+            // gpBoxType
             // 
-            this.groupBox1.Controls.Add(this.rSimpleType);
-            this.groupBox1.Controls.Add(this.rComplexType);
-            this.groupBox1.Location = new System.Drawing.Point(5, 103);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(322, 79);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Type";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.gpBoxType.Controls.Add(this.rSimpleType);
+            this.gpBoxType.Controls.Add(this.rComplexType);
+            this.gpBoxType.Location = new System.Drawing.Point(12, 138);
+            this.gpBoxType.Name = "gpBoxType";
+            this.gpBoxType.Size = new System.Drawing.Size(322, 79);
+            this.gpBoxType.TabIndex = 7;
+            this.gpBoxType.TabStop = false;
+            this.gpBoxType.Text = "Type";
+            this.gpBoxType.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // rSimpleType
             // 
             this.rSimpleType.AutoSize = true;
-            this.rSimpleType.Location = new System.Drawing.Point(25, 55);
+            this.rSimpleType.Location = new System.Drawing.Point(25, 42);
             this.rSimpleType.Name = "rSimpleType";
             this.rSimpleType.Size = new System.Drawing.Size(80, 17);
             this.rSimpleType.TabIndex = 1;
@@ -127,7 +126,7 @@
             // rComplexType
             // 
             this.rComplexType.AutoSize = true;
-            this.rComplexType.Location = new System.Drawing.Point(25, 25);
+            this.rComplexType.Location = new System.Drawing.Point(25, 19);
             this.rComplexType.Name = "rComplexType";
             this.rComplexType.Size = new System.Drawing.Size(89, 17);
             this.rComplexType.TabIndex = 0;
@@ -135,15 +134,16 @@
             this.rComplexType.Text = "ComplexType";
             this.rComplexType.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // ckNestedType
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(237, 80);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(84, 17);
-            this.checkBox1.TabIndex = 2;
-            this.checkBox1.Text = "NestedType";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckNestedType.AutoSize = true;
+            this.ckNestedType.Location = new System.Drawing.Point(243, 115);
+            this.ckNestedType.Name = "ckNestedType";
+            this.ckNestedType.Size = new System.Drawing.Size(84, 17);
+            this.ckNestedType.TabIndex = 2;
+            this.ckNestedType.Text = "NestedType";
+            this.ckNestedType.UseVisualStyleBackColor = true;
+            this.ckNestedType.CheckedChanged += new System.EventHandler(this.ckNestedType_CheckedChanged);
             // 
             // btn_ok
             // 
@@ -175,12 +175,12 @@
             this.radioButton1.Text = "Default";
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtEleValue
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(170, 20);
-            this.textBox1.TabIndex = 11;
+            this.txtEleValue.Location = new System.Drawing.Point(129, 30);
+            this.txtEleValue.Name = "txtEleValue";
+            this.txtEleValue.Size = new System.Drawing.Size(170, 20);
+            this.txtEleValue.TabIndex = 11;
             // 
             // radioButton2
             // 
@@ -213,19 +213,19 @@
             this.label5.TabIndex = 14;
             this.label5.Text = "MaxOccurs:";
             // 
-            // textBox2
+            // txtMinOccours
             // 
-            this.textBox2.Location = new System.Drawing.Point(130, 79);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(170, 20);
-            this.textBox2.TabIndex = 15;
+            this.txtMinOccours.Location = new System.Drawing.Point(130, 79);
+            this.txtMinOccours.Name = "txtMinOccours";
+            this.txtMinOccours.Size = new System.Drawing.Size(170, 20);
+            this.txtMinOccours.TabIndex = 15;
             // 
-            // textBox3
+            // txtMaxOccours
             // 
-            this.textBox3.Location = new System.Drawing.Point(129, 109);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(170, 20);
-            this.textBox3.TabIndex = 16;
+            this.txtMaxOccours.Location = new System.Drawing.Point(129, 109);
+            this.txtMaxOccours.Name = "txtMaxOccours";
+            this.txtMaxOccours.Size = new System.Drawing.Size(170, 20);
+            this.txtMaxOccours.TabIndex = 16;
             // 
             // label6
             // 
@@ -237,16 +237,16 @@
             this.label6.TabIndex = 17;
             this.label6.Text = "Form:";
             // 
-            // comboBox1
+            // cboForm
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cboForm.FormattingEnabled = true;
+            this.cboForm.Items.AddRange(new object[] {
             "qualified",
             "unqualified"});
-            this.comboBox1.Location = new System.Drawing.Point(130, 141);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(169, 21);
-            this.comboBox1.TabIndex = 18;
+            this.cboForm.Location = new System.Drawing.Point(130, 141);
+            this.cboForm.Name = "cboForm";
+            this.cboForm.Size = new System.Drawing.Size(169, 21);
+            this.cboForm.TabIndex = 18;
             // 
             // label7
             // 
@@ -258,16 +258,46 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Annotation:";
             // 
-            // richTextBox1
+            // txtNote
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(130, 179);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(169, 100);
-            this.richTextBox1.TabIndex = 20;
-            this.richTextBox1.Text = "";
+            this.txtNote.Location = new System.Drawing.Point(130, 179);
+            this.txtNote.Name = "txtNote";
+            this.txtNote.Size = new System.Drawing.Size(169, 100);
+            this.txtNote.TabIndex = 20;
+            this.txtNote.Text = "";
             // 
-            // groupBox2
+            // gpBoxElement
             // 
+            this.gpBoxElement.Controls.Add(this.txtNote);
+            this.gpBoxElement.Controls.Add(this.label7);
+            this.gpBoxElement.Controls.Add(this.radioButton2);
+            this.gpBoxElement.Controls.Add(this.txtEleValue);
+            this.gpBoxElement.Controls.Add(this.cboForm);
+            this.gpBoxElement.Controls.Add(this.label4);
+            this.gpBoxElement.Controls.Add(this.radioButton1);
+            this.gpBoxElement.Controls.Add(this.label6);
+            this.gpBoxElement.Controls.Add(this.label5);
+            this.gpBoxElement.Controls.Add(this.btn_definedType);
+            this.gpBoxElement.Controls.Add(this.label3);
+            this.gpBoxElement.Controls.Add(this.txtMaxOccours);
+            this.gpBoxElement.Controls.Add(this.txtMinOccours);
+            this.gpBoxElement.Controls.Add(this.btn_ok);
+            this.gpBoxElement.Location = new System.Drawing.Point(12, 233);
+            this.gpBoxElement.Name = "gpBoxElement";
+            this.gpBoxElement.Size = new System.Drawing.Size(322, 305);
+            this.gpBoxElement.TabIndex = 8;
+            this.gpBoxElement.TabStop = false;
+            this.gpBoxElement.Text = "Element Value";
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(12, 7);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(47, 24);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             this.groupBox2.Controls.Add(this.richTextBox1);
             this.groupBox2.Controls.Add(this.label7);
             this.groupBox2.Controls.Add(this.radioButton2);
@@ -313,6 +343,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(339, 547);
+            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.gpBoxElement);
+            this.Controls.Add(this.ckNestedType);
+            this.Controls.Add(this.gpBoxType);
             this.ClientSize = new System.Drawing.Size(339, 513);
             this.Controls.Add(this.btn_OKi);
             this.Controls.Add(this.type_browse);
@@ -320,15 +355,16 @@
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cboBuiltin_type);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lblType);
             this.Controls.Add(this.txtElementName);
             this.Controls.Add(this.label1);
             this.Name = "AddElement_popup";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AddElement_popup";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gpBoxType.ResumeLayout(false);
+            this.gpBoxType.PerformLayout();
+            this.gpBoxElement.ResumeLayout(false);
+            this.gpBoxElement.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -338,28 +374,26 @@
 
         private System.Windows.Forms.TextBox txtElementName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblType;
         private System.Windows.Forms.ComboBox cboBuiltin_type;
         private System.Windows.Forms.Button btn_definedType;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox gpBoxType;
         private System.Windows.Forms.RadioButton rSimpleType;
         private System.Windows.Forms.RadioButton rComplexType;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox ckNestedType;
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtEleValue;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtMinOccours;
+        private System.Windows.Forms.TextBox txtMaxOccours;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboForm;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Button type_browse;
-        private System.Windows.Forms.Button btn_OKi;
     }
 }

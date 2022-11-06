@@ -1,7 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using WSDLTool.Enums;
 using WSDLTool.Froms;
 using WSDLTool.Helpers;
 
@@ -10,25 +12,30 @@ namespace WSDLTool.Controls
     public partial class uc_Element : UserControl
     {
         private int id;
-        private int reqid;
-        private int resid;
+        //private int reqid;
+        //private int resid;
         private int parentid;
         private string name;
         private string minOcc;
         private string maxOcc;
         private string dataType;
-        private string responseDataType;
+        private string note;
+        private string ele_value;
+        private EleValueType ele_valueType;
+        //private string responseDataType;
         private ucParamLists param;
         private uc_ComplexType uc_complextype;
         private string paramName;
+        private bool isComplexType;
+
         public int ID { get => id; set => id = value; }
-        public int Reqid { get => reqid; set => reqid = value; }
-        public int Resid { get => resid; set => resid = value; }
+        //public int Reqid { get => reqid; set => reqid = value; }
+        //public int Resid { get => resid; set => resid = value; }
         public string Name1 { get => name; set => name = value; }
         public string MinOcc { get => minOcc; set => minOcc = value; }
         public string MaxOcc { get => maxOcc; set => maxOcc = value; }
         public string DataType { get => dataType; set => dataType = value; }
-        public string ResponseDataType { get => responseDataType; set => responseDataType = value; }
+        //public string ResponseDataType { get => responseDataType; set => responseDataType = value; }
         public int Parentid { get => parentid; set => parentid = value; }
         public string ParamName { get => paramName; set => paramName = value; }
         public Label lblTest { get; set; }
@@ -47,8 +54,10 @@ namespace WSDLTool.Controls
                 }
             }
         }
-
         public uc_ComplexType Uc_complextype { get => uc_complextype; set => uc_complextype = value; }
+        public string Note { get => note; set => note = value; }
+        public EleValueType Ele_valueType { get => ele_valueType; set => ele_valueType = value; }
+        public bool IsComplexType { get => isComplexType; set => isComplexType = value; }
 
         public uc_Element()
         {
@@ -184,7 +193,7 @@ namespace WSDLTool.Controls
                     }
                     var lblElement = new Label
                     {
-                        Text = "+  " +  cls_Common.paramCount + " : " + uc_Ele.ResponseDataType,
+                        //Text = "+  " +  cls_Common.paramCount + " : " + uc_Ele.ResponseDataType,
                         Width = 182,
                         Height = 20,
                     };
