@@ -98,7 +98,7 @@ namespace WSDLTool.Popups
                     DataType = cboBuiltin_type.Text,
                     MinOcc = txtMinOccours.Text,
                     MaxOcc = txtMaxOccours.Text,
-                    Note = txtNote.Text,
+                    //Note = txtNote.Text,
                     IsComplexType = false,
                 };
             }

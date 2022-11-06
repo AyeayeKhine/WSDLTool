@@ -49,9 +49,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.cboForm = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtNote = new System.Windows.Forms.RichTextBox();
             this.gpBoxElement = new System.Windows.Forms.GroupBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.gpBoxType.SuspendLayout();
             this.gpBoxElement.SuspendLayout();
             this.SuspendLayout();
@@ -258,17 +256,8 @@
             this.label7.TabIndex = 19;
             this.label7.Text = "Annotation:";
             // 
-            // txtNote
-            // 
-            this.txtNote.Location = new System.Drawing.Point(130, 179);
-            this.txtNote.Name = "txtNote";
-            this.txtNote.Size = new System.Drawing.Size(169, 100);
-            this.txtNote.TabIndex = 20;
-            this.txtNote.Text = "";
-            // 
             // gpBoxElement
             // 
-            this.gpBoxElement.Controls.Add(this.txtNote);
             this.gpBoxElement.Controls.Add(this.label7);
             this.gpBoxElement.Controls.Add(this.radioButton2);
             this.gpBoxElement.Controls.Add(this.txtEleValue);
@@ -284,76 +273,19 @@
             this.gpBoxElement.Controls.Add(this.btn_ok);
             this.gpBoxElement.Location = new System.Drawing.Point(12, 233);
             this.gpBoxElement.Name = "gpBoxElement";
-            this.gpBoxElement.Size = new System.Drawing.Size(322, 305);
+            this.gpBoxElement.Size = new System.Drawing.Size(322, 268);
             this.gpBoxElement.TabIndex = 8;
             this.gpBoxElement.TabStop = false;
             this.gpBoxElement.Text = "Element Value";
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(12, 7);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(47, 24);
-            this.btnSave.TabIndex = 9;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            this.groupBox2.Controls.Add(this.richTextBox1);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.radioButton2);
-            this.groupBox2.Controls.Add(this.textBox1);
-            this.groupBox2.Controls.Add(this.comboBox1);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.radioButton1);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.btn_definedType);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.textBox3);
-            this.groupBox2.Controls.Add(this.textBox2);
-            this.groupBox2.Controls.Add(this.btn_ok);
-            this.groupBox2.Location = new System.Drawing.Point(5, 188);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(322, 292);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "groupBox2";
-            // 
-            // type_browse
-            // 
-            this.type_browse.Location = new System.Drawing.Point(305, 41);
-            this.type_browse.Name = "type_browse";
-            this.type_browse.Size = new System.Drawing.Size(34, 23);
-            this.type_browse.TabIndex = 9;
-            this.type_browse.Text = "---";
-            this.type_browse.UseVisualStyleBackColor = true;
-            this.type_browse.Click += new System.EventHandler(this.type_browse_Click);
-            // 
-            // btn_OKi
-            // 
-            this.btn_OKi.Location = new System.Drawing.Point(252, 486);
-            this.btn_OKi.Name = "btn_OKi";
-            this.btn_OKi.Size = new System.Drawing.Size(75, 23);
-            this.btn_OKi.TabIndex = 21;
-            this.btn_OKi.Text = "OK";
-            this.btn_OKi.UseVisualStyleBackColor = true;
-            this.btn_OKi.Click += new System.EventHandler(this.btn_OKi_Click);
             // 
             // AddElement_popup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 547);
-            this.Controls.Add(this.btnSave);
+            this.ClientSize = new System.Drawing.Size(339, 513);
             this.Controls.Add(this.gpBoxElement);
             this.Controls.Add(this.ckNestedType);
             this.Controls.Add(this.gpBoxType);
-            this.ClientSize = new System.Drawing.Size(339, 513);
-            this.Controls.Add(this.btn_OKi);
-            this.Controls.Add(this.type_browse);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.checkBox1);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.cboBuiltin_type);
             this.Controls.Add(this.lblType);
             this.Controls.Add(this.txtElementName);
@@ -394,6 +326,6 @@
         private System.Windows.Forms.ComboBox cboForm;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gpBoxElement;
     }
 }
