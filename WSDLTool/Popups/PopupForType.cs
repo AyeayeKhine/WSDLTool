@@ -27,12 +27,9 @@ namespace WSDLTool.Popups
 
         private void btn_addElement_Click(object sender, EventArgs e)
         {
-            //Control control = ((ContextMenuStrip)((ToolStripItem)sender).Owner).SourceControl;
-            ////  AddElement_alreadyType addElement_AlreadyType = new AddElement_alreadyType();
-            //AddElement_popup addElement_Popup = new AddElement_popup();
-            //addElement_Popup.ShowDialog();
             AddElement_popup addElement_Popup = new AddElement_popup(mainForm);
             addElement_Popup.ShowDialog();
+            this.Close();
         }
 
         private void btn_addComplextType_Click(object sender, EventArgs e)

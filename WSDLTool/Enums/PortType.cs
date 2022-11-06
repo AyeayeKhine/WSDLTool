@@ -13,4 +13,9 @@ namespace WSDLTool.Enums
         One_way,
         Notification,
     }
+    public enum EleValueType
+    {
+        Default,
+        Fixed
+    }
 }

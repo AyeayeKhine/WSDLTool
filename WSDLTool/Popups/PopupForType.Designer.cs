@@ -126,6 +126,7 @@
             this.Controls.Add(this.btn_addComplextType);
             this.Controls.Add(this.btn_addElement);
             this.Name = "PopupForType";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "PopupForType";
             this.ResumeLayout(false);
 

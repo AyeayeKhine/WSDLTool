@@ -79,7 +79,7 @@ namespace WSDLTool.Froms
                 dataGridView1.Rows[3].Cells[1].Value = ucEle.DataType;
                 dataGridView1.Rows[4].Cells[0].Value = "ResponseType ";
                 //dataGridView1.Rows[5].Cells[1]
-                dataGridView1.Rows[4].Cells[1].Value = ucEle.ResponseDataType;
+                //dataGridView1.Rows[4].Cells[1].Value = ucEle.ResponseDataType;
                 //btnBindDataToElement.Visible = true;
             }
         }

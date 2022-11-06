@@ -12,7 +12,7 @@ namespace WSDLTool.Helpers
         public static int parentCount { get; set; } = 1;
         public static int txtElementHeight { get; set; }
         public static int paramCount { get; set; }
-        public static int EleId { get; set; }
+        public static int EleId { get; set; } = 1;
         public static int msgCount { get; set; } = 1;
         public static int portCount { get; set; } = 1;
         public static int operationCount { get; set; } = 1;
