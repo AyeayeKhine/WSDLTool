@@ -54,6 +54,19 @@ namespace WSDLTool.Froms
         }
         public void addElementItem_Click(object sender, EventArgs e)
         {
+            //Control control = ((ContextMenuStrip)((ToolStripItem)sender).Owner).SourceControl;
+            //AddParameter addParameter = new AddParameter(this, control);
+            //addParameter.ShowDialog();
+        }
+        public void ModifyElementItem_Click(object sender, EventArgs e)
+        {
+            Control control = ((ContextMenuStrip)((ToolStripItem)sender).Owner).SourceControl;
+            var ele = (uc_Element)control;
+            AddElement_popup addElement_ = new AddElement_popup(this, ele);
+            addElement_.ShowDialog();
+        }
+        public void DeleteElementItem_Click(object sender, EventArgs e)
+        {
             Control control = ((ContextMenuStrip)((ToolStripItem)sender).Owner).SourceControl;
             AddParameter addParameter = new AddParameter(this, control);
             addParameter.ShowDialog();

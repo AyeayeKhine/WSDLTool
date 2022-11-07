@@ -27,9 +27,9 @@ namespace WSDLTool.Popups
 
         private void btn_addElement_Click(object sender, EventArgs e)
         {
+            this.Close();
             AddElement_popup addElement_Popup = new AddElement_popup(mainForm);
             addElement_Popup.ShowDialog();
-            this.Close();
         }
 
         private void btn_addComplextType_Click(object sender, EventArgs e)

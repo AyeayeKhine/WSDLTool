@@ -33,7 +33,7 @@ namespace WSDLTool.Popups
             {
                 typeName = "ComplexType";
             }
-            uc_Element ele = new uc_Element(mainForm, loc, txtElementName.Text, 0, typeName);
+           // uc_Element ele = new uc_Element(mainForm, loc, txtElementName.Text, 0, typeName);
             this.Close();
         }
     }

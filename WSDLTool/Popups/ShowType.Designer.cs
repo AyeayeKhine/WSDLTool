@@ -40,7 +40,7 @@
             treeNode1.Text = "XSD Types";
             this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
             treeNode1});
-            this.treeView1.Size = new System.Drawing.Size(235, 177);
+            this.treeView1.Size = new System.Drawing.Size(247, 177);
             this.treeView1.TabIndex = 1;
             this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
             // 

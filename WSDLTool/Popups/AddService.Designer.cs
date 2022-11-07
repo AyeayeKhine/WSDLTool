@@ -34,11 +34,11 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.btn_port = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.col_portName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_binding = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.col_location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -97,20 +97,11 @@
             this.groupBox1.Controls.Add(this.btn_port);
             this.groupBox1.Location = new System.Drawing.Point(16, 164);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(225, 170);
+            this.groupBox1.Size = new System.Drawing.Size(245, 170);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ports";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(166, 10);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(42, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Delete";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -139,6 +130,15 @@
             // 
             this.col_location.HeaderText = "Location";
             this.col_location.Name = "col_location";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(166, 10);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(42, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Delete";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // button1
             // 

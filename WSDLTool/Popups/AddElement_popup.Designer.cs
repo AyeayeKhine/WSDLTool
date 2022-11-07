@@ -39,9 +39,9 @@
             this.ckNestedType = new System.Windows.Forms.CheckBox();
             this.btn_ok = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.rDefault = new System.Windows.Forms.RadioButton();
             this.txtEleValue = new System.Windows.Forms.TextBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rFixed = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtMinOccours = new System.Windows.Forms.TextBox();
@@ -110,7 +110,6 @@
             this.gpBoxType.TabIndex = 7;
             this.gpBoxType.TabStop = false;
             this.gpBoxType.Text = "Type";
-            this.gpBoxType.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // rSimpleType
             // 
@@ -164,16 +163,16 @@
             this.label3.TabIndex = 9;
             this.label3.Text = "Value:";
             // 
-            // radioButton1
+            // rDefault
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(129, 56);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(59, 17);
-            this.radioButton1.TabIndex = 10;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Default";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.rDefault.AutoSize = true;
+            this.rDefault.Location = new System.Drawing.Point(129, 56);
+            this.rDefault.Name = "rDefault";
+            this.rDefault.Size = new System.Drawing.Size(59, 17);
+            this.rDefault.TabIndex = 10;
+            this.rDefault.TabStop = true;
+            this.rDefault.Text = "Default";
+            this.rDefault.UseVisualStyleBackColor = true;
             // 
             // txtEleValue
             // 
@@ -182,16 +181,16 @@
             this.txtEleValue.Size = new System.Drawing.Size(170, 20);
             this.txtEleValue.TabIndex = 11;
             // 
-            // radioButton2
+            // rFixed
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(249, 56);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(50, 17);
-            this.radioButton2.TabIndex = 12;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Fixed";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rFixed.AutoSize = true;
+            this.rFixed.Location = new System.Drawing.Point(249, 56);
+            this.rFixed.Name = "rFixed";
+            this.rFixed.Size = new System.Drawing.Size(50, 17);
+            this.rFixed.TabIndex = 12;
+            this.rFixed.TabStop = true;
+            this.rFixed.Text = "Fixed";
+            this.rFixed.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -270,11 +269,11 @@
             // 
             this.gpBoxElement.Controls.Add(this.txtNote);
             this.gpBoxElement.Controls.Add(this.label7);
-            this.gpBoxElement.Controls.Add(this.radioButton2);
+            this.gpBoxElement.Controls.Add(this.rFixed);
             this.gpBoxElement.Controls.Add(this.txtEleValue);
             this.gpBoxElement.Controls.Add(this.cboForm);
             this.gpBoxElement.Controls.Add(this.label4);
-            this.gpBoxElement.Controls.Add(this.radioButton1);
+            this.gpBoxElement.Controls.Add(this.rDefault);
             this.gpBoxElement.Controls.Add(this.label6);
             this.gpBoxElement.Controls.Add(this.label5);
             this.gpBoxElement.Controls.Add(this.label3);
@@ -337,9 +336,9 @@
         private System.Windows.Forms.CheckBox ckNestedType;
         private System.Windows.Forms.Button btn_ok;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton rDefault;
         private System.Windows.Forms.TextBox txtEleValue;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rFixed;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtMinOccours;

@@ -58,62 +58,44 @@ namespace WSDLTool.Controls
         public string Note { get => note; set => note = value; }
         public EleValueType Ele_valueType { get => ele_valueType; set => ele_valueType = value; }
         public bool IsComplexType { get => isComplexType; set => isComplexType = value; }
+        public string Ele_value { get => ele_value; set => ele_value = value; }
 
         public uc_Element()
         {
             InitializeComponent();
         }
 
-        public uc_Element(MainForm _Main, Point _Loc, string _Name, int _ElementTypeId,string _TypeName)
+        public uc_Element(MainForm _Main, Point _Loc,uc_Element _Element)
         {
             InitializeComponent();
-            this.addElementItem.Click += _Main.addElementItem_Click;
             var point = new Point();
             point.X = _Loc.X + 20;
             point.Y = _Loc.Y + 20;
             this.Location = point;
             int cCount = 1;
-            
-            if(_ElementTypeId == 0)
+            if (!_Element.IsComplexType)
             {
-                var reqEle = new uc_Element
-                {
-                    Name1 = _Name + "Request",
-                    Parentid = cls_Common.parentCount,
-                    ID = 1,
-                };
-                var resEle = new uc_Element
-                {
-                    Name1 = _Name + "Response",
-                    Parentid = cls_Common.parentCount,
-                    ID = 2,
-                };
-                
-                ucLists.ElementReqs.Add(reqEle);
-                ucLists.ElementResps.Add(resEle);
-                cls_Common.parentCount++;
-                
-                Point point1 = new Point(30, 30);
-                reqEle.Location = point1;
-                reqEle.lblElement.Text = reqEle.Name1;
-                reqEle.lblTypeName.Text = _TypeName;
-                reqEle.addElementItem.Click += _Main.addElementItem_Click;
-                ControlExtension.Draggable(reqEle, true);
-                _Main.panelType.Controls.Add(reqEle);
+                ElementMenu = new ContextMenuStrip();
+                var addReqElement = new ToolStripMenuItem("Modifiy Element", null, _Main.ModifyElementItem_Click);
+                ElementMenu.Items.Add(addReqElement);
 
-                point1 = new Point(70, 70);
-                resEle.Location = point1;
-                resEle.lblElement.Text = resEle.Name1;
-                resEle.lblTypeName.Text = _TypeName;
-                resEle.addElementItem.Click += _Main.addElementItem_Click;
-                ControlExtension.Draggable(resEle, true);
-                _Main.panelType.Controls.Add(resEle);
+                var addResElement = new ToolStripMenuItem("Delete Element", null, _Main.DeleteElementItem_Click);
+                ElementMenu.Items.Add(addResElement);
+                this.ContextMenuStrip = ElementMenu;
+                _Element.ContextMenuStrip = this.ContextMenuStrip;
+                _Element.Size = new Size(256, 65);
+                _Element.lblTypeName.Text = _Element.Name1;
+                _Element.addElementItem.Click += _Main.addElementItem_Click;
+                ControlExtension.Draggable(_Element, true);
+                _Main.panelType.Controls.Add(_Element);
             }
             else
             {
-
+                _Element.lblTypeName.Text = _Element.Name1;
+                _Element.addElementItem.Click += _Main.addElementItem_Click;
+                ControlExtension.Draggable(_Element, true);
+                _Main.panelType.Controls.Add(_Element);
             }
-           
         }
 
         public uc_Element(MainForm _Main, Control _Control)

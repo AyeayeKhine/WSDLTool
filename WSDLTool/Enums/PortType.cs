@@ -15,6 +15,7 @@ namespace WSDLTool.Enums
     }
     public enum EleValueType
     {
+        Unknow,
         Default,
         Fixed
     }

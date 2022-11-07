@@ -49,8 +49,8 @@
             this.lblElement.Name = "lblElement";
             this.lblElement.Size = new System.Drawing.Size(256, 31);
             this.lblElement.TabIndex = 0;
-            this.lblElement.Text = "ElementName";
-            this.lblElement.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblElement.Text = " <<ElementName>>";
+            this.lblElement.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // ElementMenu
             // 
@@ -108,7 +108,7 @@
             this.Controls.Add(this.lblTypeName);
             this.Controls.Add(this.lblElement);
             this.Name = "uc_Element";
-            this.Size = new System.Drawing.Size(256, 173);
+            this.Size = new System.Drawing.Size(256, 176);
             this.ElementMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 

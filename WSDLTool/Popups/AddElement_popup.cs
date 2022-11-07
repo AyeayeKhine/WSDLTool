@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WSDLTool.Controls;
+using WSDLTool.Enums;
 using WSDLTool.Froms;
 using WSDLTool.Helpers;
 
@@ -23,6 +24,8 @@ namespace WSDLTool.Popups
             "anyType",
             "anyURI","base64Binary","boolean","byte","date","dateTime","decimal","double","duration","ENTITIES","ENTITY","float","gDay","gMonth","gMonthDay","gYear","gYearMonth","hexBinary","ID","IDREF","IDREFS","integer","language","long","normalizedString","Name","NCName","negativeInteger","NMTOKEN","NMTOKENS","nonNegativeInteger","nonPositiveInteger","NOTATION","positiveInteger","QName","short","string","time","token","unsignedByte","unsignedInt","unsignedShort","unsignedLong",
          };
+        public EleValueType eleValue;
+        public int ID;
         public AddElement_popup()
         {
             InitializeComponent();
@@ -35,28 +38,56 @@ namespace WSDLTool.Popups
             gpBoxType.Visible = false;
             gpBoxElement.Location = new Point(12, 138);
             this.Size = new Size(355, 500);
+            ID = 0;
             foreach (string type in types)
             {
                 cboBuiltin_type.Items.Add(type);
             }
         }
-
-       
-
-        private void groupBox1_Enter(object sender, EventArgs e)
+        public AddElement_popup(MainForm _Main, uc_Element _Element)
         {
-
+            InitializeComponent();
+            mainForm = _Main;
+            if (!_Element.IsComplexType)
+            {
+                gpBoxElement.Visible = true;
+                gpBoxType.Visible = false;
+                gpBoxElement.Location = new Point(12, 138);
+                this.Size = new Size(355, 500);
+                foreach (string type in types)
+                {
+                    cboBuiltin_type.Items.Add(type);
+                }
+                ID = _Element.ID;
+                txtElementName.Text = _Element.Name1;
+                txtEleValue.Text = _Element.Ele_value;
+                txtMaxOccours.Text = _Element.MaxOcc;
+                txtMinOccours.Text = _Element.MinOcc;
+                ckNestedType.Enabled = false;
+                cboBuiltin_type.Text = _Element.DataType;
+                BindR(_Element);
+            }
         }
-
-      
-
+        private void BindR(uc_Element _Element)
+        {
+            switch (_Element.Ele_valueType)
+            {
+                case EleValueType.Default:
+                    rDefault.Checked = true;
+                    break;
+                case EleValueType.Fixed:
+                    rFixed.Checked = true;
+                    break;
+                default:
+                    break;
+            }
+        }
         private void type_browse_Click(object sender, EventArgs e)
         {
             ShowType showType = new ShowType();
             // ShowElement showElement = new ShowElement(this);
             showType.ShowDialog();
         }
-
         private void ckNestedType_CheckedChanged(object sender, EventArgs e)
         {
             if (ckNestedType.Checked)
@@ -80,36 +111,74 @@ namespace WSDLTool.Popups
                 this.Size = new Size(355, 500);
             }
         }
-
         private void btnSave_Click(object sender, EventArgs e)
         {
             var uc_ele = new uc_Element();
-            if (ckNestedType.Checked)
+
+            //Check ValueType
+            if (rDefault.Checked)
             {
-                uc_ele = new uc_Element()
-                {
-                    ID = cls_Common.EleId,
-                    Name1 = txtElementName.Text,
-                    IsComplexType = true,
-                };
+                eleValue = EleValueType.Default;
+            }
+            else if (rFixed.Checked)
+            {
+                eleValue = EleValueType.Fixed;
             }
             else
             {
-                uc_ele = new uc_Element
-                {
-                    ID = cls_Common.EleId,
-                    Name1 = txtElementName.Text,
-                    DataType = cboBuiltin_type.Text,
-                    MinOcc = txtMinOccours.Text,
-                    MaxOcc = txtMaxOccours.Text,
-                    Note = txtNote.Text,
-                    IsComplexType = false,
-                };
+                eleValue = EleValueType.Unknow;
             }
-            cls_Common.EleId++;
-            ucLists.Elements.Add(uc_ele);
-        }
 
+            //Check Add/Modify Element
+            if (ID != 0)
+            {
+                var item = ucLists.Elements.Where(ele => ele.ID == ID).FirstOrDefault();
+                item.ID = cls_Common.EleId;
+                item.Name1 = txtElementName.Text;
+                item.DataType = cboBuiltin_type.Text;
+                item.MinOcc = txtMinOccours.Text;
+                item.MaxOcc = txtMaxOccours.Text;
+                item.Note = txtNote.Text;
+                item.IsComplexType = false;
+                item.Ele_value = txtEleValue.Text;
+                item.Ele_valueType = eleValue;
+            }
+            else
+            {
+                //Check Simple/Complex Element
+                if (ckNestedType.Checked)
+                {
+                    uc_ele = new uc_Element()
+                    {
+                        ID = cls_Common.EleId,
+                        Name1 = txtElementName.Text,
+                        IsComplexType = true,
+                    };
+                }
+                else
+                {
+                    uc_ele = new uc_Element
+                    {
+                        ID = cls_Common.EleId,
+                        Name1 = txtElementName.Text,
+                        DataType = cboBuiltin_type.Text,
+                        MinOcc = txtMinOccours.Text,
+                        MaxOcc = txtMaxOccours.Text,
+                        Note = txtNote.Text,
+                        IsComplexType = false,
+                        Ele_value = txtEleValue.Text,
+                        Ele_valueType = eleValue,
+                    };
+                }
+
+                cls_Common.EleId++;
+                ucLists.Elements.Add(uc_ele);
+            }
+            Point point = new Point();
+            this.Close();
+            uc_Element uc_ = new uc_Element(mainForm, point, uc_ele);
+
+        }
         private void btn_OKi_Click(object sender, EventArgs e)
         {
 
