@@ -219,7 +219,7 @@
             // 
             // panelLoad
             // 
-            this.panelLoad.BackColor = System.Drawing.SystemColors.Info;
+            this.panelLoad.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panelLoad.Controls.Add(this.panelType);
             this.panelLoad.Controls.Add(this.tblPanelType);
             this.panelLoad.Controls.Add(this.tblPanelMessage);
@@ -234,6 +234,7 @@
             // 
             // panelType
             // 
+            this.panelType.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.panelType.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelType.Location = new System.Drawing.Point(0, 129);
             this.panelType.Name = "panelType";
@@ -437,7 +438,7 @@
             // contextMenuStrip1
             // 
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // MainForm
             // 

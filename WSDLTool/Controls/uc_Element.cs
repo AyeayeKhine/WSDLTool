@@ -72,9 +72,10 @@ namespace WSDLTool.Controls
             point.X = _Loc.X + 20;
             point.Y = _Loc.Y + 20;
             this.Location = point;
-            int cCount = 1;
             if (!_Element.IsComplexType)
             {
+                _Element.lblComplexType.Visible = false;
+                _Element.lblElement.Text = _Element.Name1;
                 ElementMenu = new ContextMenuStrip();
                 var addReqElement = new ToolStripMenuItem("Modifiy Element", null, _Main.ModifyElementItem_Click);
                 ElementMenu.Items.Add(addReqElement);
@@ -82,16 +83,62 @@ namespace WSDLTool.Controls
                 var addResElement = new ToolStripMenuItem("Delete Element", null, _Main.DeleteElementItem_Click);
                 ElementMenu.Items.Add(addResElement);
                 this.ContextMenuStrip = ElementMenu;
+                var lbl1 = new Label
+                {
+                    Text = "ID     :" +_Element.ID,
+                    AutoSize = false,
+                };
+                //Add location of new Element
+                lbl1.Location = new Point(0, cls_Common.txtElementHeight);
+
+                var lbl2 = new Label
+                {
+                    Text = "Min Occurs   :" + _Element.minOcc,
+                    AutoSize = false,
+                };
+                //Add location of new Element
+                cls_Common.txtElementHeight += 23;
+                lbl2.Location = new Point(0, cls_Common.txtElementHeight);
+
+                var lbl3 = new Label
+                {
+                    Text = "Max Occurs   :" + _Element.maxOcc,
+                    AutoSize = false,
+                };
+                //Add location of new Element
+                cls_Common.txtElementHeight += 23;
+                lbl3.Location = new Point(0, cls_Common.txtElementHeight);
+
+                var lbl4 = new Label
+                {
+                    Text = "Types   :" + _Element.dataType,
+                    AutoSize = false,
+                };
+                //Add location of new Element
+                cls_Common.txtElementHeight += 23;
+                lbl4.Location = new Point(0, cls_Common.txtElementHeight);
+
+                var lbl5 = new Label
+                {
+                    Text = "Values   :" + _Element.ele_value,
+                    AutoSize = false,
+                };
+                cls_Common.txtElementHeight += 23;
+                //Add location of new Element
+                lbl5.Location = new Point(0, cls_Common.txtElementHeight);
+                _Element.Controls.Add(lbl1);
+                _Element.Controls.Add(lbl2);
+                _Element.Controls.Add(lbl3);
+                _Element.Controls.Add(lbl4);
+                _Element.Controls.Add(lbl5);
                 _Element.ContextMenuStrip = this.ContextMenuStrip;
-                _Element.Size = new Size(256, 65);
-                _Element.lblTypeName.Text = _Element.Name1;
                 _Element.addElementItem.Click += _Main.addElementItem_Click;
                 ControlExtension.Draggable(_Element, true);
                 _Main.panelType.Controls.Add(_Element);
             }
             else
             {
-                _Element.lblTypeName.Text = _Element.Name1;
+                _Element.lblElement.Text = _Element.Name1;
                 _Element.addElementItem.Click += _Main.addElementItem_Click;
                 ControlExtension.Draggable(_Element, true);
                 _Main.panelType.Controls.Add(_Element);
@@ -103,6 +150,7 @@ namespace WSDLTool.Controls
             InitializeComponent();
             var uc_Ele = (uc_Element)_Control;
             int parentId = uc_Ele.parentid;
+            
             if (uc_Ele.ID == 1)
             {
                 var tempEle = ucLists.ElementReqs.Where(i => i.parentid == parentId).FirstOrDefault();

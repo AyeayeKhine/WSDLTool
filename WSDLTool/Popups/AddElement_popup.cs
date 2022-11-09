@@ -26,6 +26,7 @@ namespace WSDLTool.Popups
          };
         public EleValueType eleValue;
         public int ID;
+        public int ParentId =0;
         public AddElement_popup()
         {
             InitializeComponent();
@@ -43,11 +44,30 @@ namespace WSDLTool.Popups
             {
                 cboBuiltin_type.Items.Add(type);
             }
+            btnSaveChild.Visible = false;
+        }
+        public AddElement_popup(MainForm _Main, Control _Control)
+        {
+            InitializeComponent();
+            mainForm = _Main;
+            controls = _Control;
+            btnSave.Visible = false;
+            ParentId = ((uc_Element)controls).ID;
+            gpBoxElement.Visible = true;
+            gpBoxType.Visible = false;
+            gpBoxElement.Location = new Point(12, 138);
+            this.Size = new Size(355, 500);
+            ID = 0;
+            foreach (string type in types)
+            {
+                cboBuiltin_type.Items.Add(type);
+            }
         }
         public AddElement_popup(MainForm _Main, uc_Element _Element)
         {
             InitializeComponent();
             mainForm = _Main;
+            btnSaveChild.Visible = false;
             if (!_Element.IsComplexType)
             {
                 gpBoxElement.Visible = true;
@@ -132,6 +152,7 @@ namespace WSDLTool.Popups
             //Check Add/Modify Element
             if (ID != 0)
             {
+                //Modify Element
                 var item = ucLists.Elements.Where(ele => ele.ID == ID).FirstOrDefault();
                 item.ID = cls_Common.EleId;
                 item.Name1 = txtElementName.Text;
@@ -157,18 +178,7 @@ namespace WSDLTool.Popups
                 }
                 else
                 {
-                    uc_ele = new uc_Element
-                    {
-                        ID = cls_Common.EleId,
-                        Name1 = txtElementName.Text,
-                        DataType = cboBuiltin_type.Text,
-                        MinOcc = txtMinOccours.Text,
-                        MaxOcc = txtMaxOccours.Text,
-                        Note = txtNote.Text,
-                        IsComplexType = false,
-                        Ele_value = txtEleValue.Text,
-                        Ele_valueType = eleValue,
-                    };
+                    uc_ele = CloneElement(cls_Common.EleId);
                 }
 
                 cls_Common.EleId++;
@@ -179,9 +189,66 @@ namespace WSDLTool.Popups
             uc_Element uc_ = new uc_Element(mainForm, point, uc_ele);
 
         }
+        private uc_Element CloneElement(int ID)
+        {
+           var uc_ele = new uc_Element
+            {
+                ID = ID,
+                Name1 = txtElementName.Text,
+                DataType = cboBuiltin_type.Text,
+                MinOcc = txtMinOccours.Text,
+                MaxOcc = txtMaxOccours.Text,
+                Note = txtNote.Text,
+                IsComplexType = false,
+                Ele_value = txtEleValue.Text,
+                Ele_valueType = eleValue,
+                Parentid = ParentId,
+            };
+            return uc_ele;
+        }
         private void btn_OKi_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSaveChild_Click(object sender, EventArgs e)
+        {
+            var uc_ele = new uc_Element();
+            var parent_ele = new uc_Element();
+            //Check ValueType
+            if (rDefault.Checked)
+            {
+                eleValue = EleValueType.Default;
+            }
+            else if (rFixed.Checked)
+            {
+                eleValue = EleValueType.Fixed;
+            }
+            else
+            {
+                eleValue = EleValueType.Unknow;
+            }
+            //Check Simple/Complex Element
+            if (ckNestedType.Checked)
+            {
+                uc_ele = new uc_Element()
+                {
+                    ID = cls_Common.ChildEleId,
+                    Name1 = txtElementName.Text,
+                    IsComplexType = true,
+                };
+
+            }
+            else
+            {
+                uc_ele = CloneElement(cls_Common.ChildEleId);
+                 
+            }
+            cls_Common.ChildEleId++;
+            parent_ele = ucLists.Elements.Where(ele => ele.ID == ParentId).FirstOrDefault();
+            //if(parent_ele.Param)
+            uc_Element uc_ = new uc_Element(mainForm, controls); 
+            
         }
     }
 }

@@ -52,6 +52,7 @@
             this.txtNote = new System.Windows.Forms.RichTextBox();
             this.gpBoxElement = new System.Windows.Forms.GroupBox();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnSaveChild = new System.Windows.Forms.Button();
             this.gpBoxType.SuspendLayout();
             this.gpBoxElement.SuspendLayout();
             this.SuspendLayout();
@@ -297,11 +298,23 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnSaveChild
+            // 
+            //this.btnSaveChild.Location = new System.Drawing.Point(71, 8);
+            this.btnSaveChild.Location = new System.Drawing.Point(12, 7);
+            this.btnSaveChild.Name = "btnSaveChild";
+            this.btnSaveChild.Size = new System.Drawing.Size(46, 23);
+            this.btnSaveChild.TabIndex = 10;
+            this.btnSaveChild.Text = "Save";
+            this.btnSaveChild.UseVisualStyleBackColor = true;
+            this.btnSaveChild.Click += new System.EventHandler(this.btnSaveChild_Click);
+            // 
             // AddElement_popup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 513);
+            this.Controls.Add(this.btnSaveChild);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.gpBoxElement);
             this.Controls.Add(this.ckNestedType);
@@ -349,5 +362,6 @@
         private System.Windows.Forms.RichTextBox txtNote;
         private System.Windows.Forms.GroupBox gpBoxElement;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnSaveChild;
     }
 }
