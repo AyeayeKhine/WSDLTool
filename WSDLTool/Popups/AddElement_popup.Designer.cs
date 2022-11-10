@@ -91,6 +91,7 @@
             this.cboBuiltin_type.Name = "cboBuiltin_type";
             this.cboBuiltin_type.Size = new System.Drawing.Size(135, 21);
             this.cboBuiltin_type.TabIndex = 5;
+            this.cboBuiltin_type.SelectedIndexChanged += new System.EventHandler(this.cboBuiltin_type_SelectedIndexChanged);
             // 
             // btn_definedType
             // 
@@ -100,6 +101,7 @@
             this.btn_definedType.TabIndex = 6;
             this.btn_definedType.Text = "---";
             this.btn_definedType.UseVisualStyleBackColor = true;
+            this.btn_definedType.Click += new System.EventHandler(this.btn_definedType_Click);
             // 
             // gpBoxType
             // 
@@ -300,7 +302,6 @@
             // 
             // btnSaveChild
             // 
-            //this.btnSaveChild.Location = new System.Drawing.Point(71, 8);
             this.btnSaveChild.Location = new System.Drawing.Point(12, 7);
             this.btnSaveChild.Name = "btnSaveChild";
             this.btnSaveChild.Size = new System.Drawing.Size(46, 23);
@@ -341,7 +342,7 @@
         private System.Windows.Forms.TextBox txtElementName;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblType;
-        private System.Windows.Forms.ComboBox cboBuiltin_type;
+        public System.Windows.Forms.ComboBox cboBuiltin_type;
         private System.Windows.Forms.Button btn_definedType;
         private System.Windows.Forms.GroupBox gpBoxType;
         private System.Windows.Forms.RadioButton rSimpleType;

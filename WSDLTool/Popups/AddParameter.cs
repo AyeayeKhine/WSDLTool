@@ -59,7 +59,7 @@ namespace WSDLTool.Popups
                 //_ele.ResponseDataType = selectedType;
             }
             var contr = (Control)_ele;
-            uc_Element ele = new uc_Element(mainForm, contr);
+            //uc_Element ele = new uc_Element(mainForm, contr);
             this.Close();
         }
 

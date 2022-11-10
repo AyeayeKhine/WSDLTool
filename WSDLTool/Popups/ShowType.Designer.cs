@@ -28,29 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.TreeNode treeNode1 = new System.Windows.Forms.TreeNode("XSD Types");
-            this.treeView1 = new System.Windows.Forms.TreeView();
+            System.Windows.Forms.TreeNode treeNode2 = new System.Windows.Forms.TreeNode("XSD Types");
+            this.typeviews = new System.Windows.Forms.TreeView();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // treeView1
+            // typeviews
             // 
-            this.treeView1.Location = new System.Drawing.Point(-2, 12);
-            this.treeView1.Name = "treeView1";
-            treeNode1.Name = "Node0";
-            treeNode1.Text = "XSD Types";
-            this.treeView1.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
-            treeNode1});
-            this.treeView1.Size = new System.Drawing.Size(247, 177);
-            this.treeView1.TabIndex = 1;
-            this.treeView1.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterSelect);
+            this.typeviews.Location = new System.Drawing.Point(0, 1);
+            this.typeviews.Name = "typeviews";
+            treeNode2.Name = "Node0";
+            treeNode2.Text = "XSD Types";
+            this.typeviews.Nodes.AddRange(new System.Windows.Forms.TreeNode[] {
+            treeNode2});
+            this.typeviews.Size = new System.Drawing.Size(296, 177);
+            this.typeviews.TabIndex = 1;
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(219, 193);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(75, 33);
+            this.btnSelect.TabIndex = 2;
+            this.btnSelect.Text = "Select";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // ShowType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(245, 227);
-            this.Controls.Add(this.treeView1);
+            this.ClientSize = new System.Drawing.Size(295, 227);
+            this.Controls.Add(this.btnSelect);
+            this.Controls.Add(this.typeviews);
             this.Name = "ShowType";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "ShowType";
             this.ResumeLayout(false);
 
@@ -58,6 +70,7 @@
 
         #endregion
 
-        private System.Windows.Forms.TreeView treeView1;
+        private System.Windows.Forms.TreeView typeviews;
+        private System.Windows.Forms.Button btnSelect;
     }
 }

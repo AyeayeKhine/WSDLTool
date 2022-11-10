@@ -72,6 +72,7 @@ namespace WSDLTool.Controls
             point.X = _Loc.X + 20;
             point.Y = _Loc.Y + 20;
             this.Location = point;
+            cls_Common.txtElementHeight = 40;
             if (!_Element.IsComplexType)
             {
                 _Element.lblComplexType.Visible = false;
@@ -145,7 +146,7 @@ namespace WSDLTool.Controls
             }
         }
 
-        public uc_Element(MainForm _Main, Control _Control)
+        public uc_Element(MainForm _Main, Control _Control,uc_Element _Element)
         {
             InitializeComponent();
             var uc_Ele = (uc_Element)_Control;

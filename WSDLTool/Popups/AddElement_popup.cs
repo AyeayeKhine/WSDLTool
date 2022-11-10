@@ -242,13 +242,22 @@ namespace WSDLTool.Popups
             else
             {
                 uc_ele = CloneElement(cls_Common.ChildEleId);
-                 
             }
             cls_Common.ChildEleId++;
             parent_ele = ucLists.Elements.Where(ele => ele.ID == ParentId).FirstOrDefault();
             //if(parent_ele.Param)
-            uc_Element uc_ = new uc_Element(mainForm, controls); 
+            uc_Element uc_ = new uc_Element(mainForm, controls,uc_ele); 
             
+        }
+
+        private void btn_definedType_Click(object sender, EventArgs e)
+        {
+            ShowType showType = new ShowType(this);
+            showType.ShowDialog();
+        }
+        private void cboBuiltin_type_SelectedIndexChanged(object sender, EventArgs e)
+        {
+             string ss = (string)cboBuiltin_type.SelectedItem;
         }
     }
 }
