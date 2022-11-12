@@ -91,7 +91,7 @@
             this.cboBuiltin_type.Name = "cboBuiltin_type";
             this.cboBuiltin_type.Size = new System.Drawing.Size(135, 21);
             this.cboBuiltin_type.TabIndex = 5;
-            this.cboBuiltin_type.SelectedIndexChanged += new System.EventHandler(this.cboBuiltin_type_SelectedIndexChanged);
+            this.cboBuiltin_type.TextChanged += new System.EventHandler(this.cboBuiltin_type_TextChanged);
             // 
             // btn_definedType
             // 
@@ -314,7 +314,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 513);
+            this.ClientSize = new System.Drawing.Size(339, 511);
             this.Controls.Add(this.btnSaveChild);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.gpBoxElement);

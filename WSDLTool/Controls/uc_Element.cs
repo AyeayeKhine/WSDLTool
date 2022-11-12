@@ -12,8 +12,6 @@ namespace WSDLTool.Controls
     public partial class uc_Element : UserControl
     {
         private int id;
-        //private int reqid;
-        //private int resid;
         private int parentid;
         private string name;
         private string minOcc;
@@ -22,20 +20,16 @@ namespace WSDLTool.Controls
         private string note;
         private string ele_value;
         private EleValueType ele_valueType;
-        //private string responseDataType;
         private ucParamLists param;
         private uc_ComplexType uc_complextype;
         private string paramName;
         private bool isComplexType;
 
         public int ID { get => id; set => id = value; }
-        //public int Reqid { get => reqid; set => reqid = value; }
-        //public int Resid { get => resid; set => resid = value; }
         public string Name1 { get => name; set => name = value; }
         public string MinOcc { get => minOcc; set => minOcc = value; }
         public string MaxOcc { get => maxOcc; set => maxOcc = value; }
         public string DataType { get => dataType; set => dataType = value; }
-        //public string ResponseDataType { get => responseDataType; set => responseDataType = value; }
         public int Parentid { get => parentid; set => parentid = value; }
         public string ParamName { get => paramName; set => paramName = value; }
         public Label lblTest { get; set; }
@@ -151,105 +145,39 @@ namespace WSDLTool.Controls
             InitializeComponent();
             var uc_Ele = (uc_Element)_Control;
             int parentId = uc_Ele.parentid;
-            
-            if (uc_Ele.ID == 1)
+            if (uc_Ele.Param != null && uc_Ele.Param.ParamLists.Count > 0)
             {
-                var tempEle = ucLists.ElementReqs.Where(i => i.parentid == parentId).FirstOrDefault();
-                if (tempEle != null)
-                {
-                    if (tempEle.Param != null && tempEle.Param.ParamLists.Count > 0)
-                    {
-                        int count = tempEle.Param.ParamLists.Count;
-                        string Name = uc_Ele.ParamName;
-                        //Update location of new Element parameter
-                        cls_Common.txtElementHeight = (count * 20) + 70;
-                        //Update param Count
-                        cls_Common.paramCount++;
-                    }
-                    else
-                    {
-                        //Inilization location of new Element parameter
-                        cls_Common.txtElementHeight = 70;
-                        //Inilization param Count
-                        cls_Common.paramCount = 1;
-                    }
-                    var lblElement = new Label
-                    {
-                        Text = "+  " + uc_Ele.ParamName +" : " + uc_Ele.dataType,
-                        Width = 182,
-                        Height = 20,
-                    };
-                    lblElement.Click += _Main.AddElementProperty_Click;
-                    uc_Ele.Controls.Add(lblElement);
-                    //Add location of new Element
-                    lblElement.Location = new Point(0, cls_Common.txtElementHeight);
-                    //Update Complex Element in Main.panel_load
-                    _Main.panelType.Controls.Add(uc_Ele);
-                    //Add new Element parameter in Element
-                    if (tempEle.Param == null ||tempEle.Param.ParamLists == null)
-                    {
-                        tempEle.Param = new ucParamLists();
-                        tempEle.Param.ParamLists = new List<uc_Element>();
-                    }
-                    uc_Ele.Parentid = parentId;
-                    var itmen = new uc_Element
-                    {
-                        ID = 1,
-                        ParamName = uc_Ele.paramName,
-                        dataType = uc_Ele.dataType,
-                    };
-                    tempEle.Param.ParamLists.Add(itmen);
-                }
+                int count = uc_Ele.Param.ParamLists.Count;
+                string Name = uc_Ele.ParamName;
+                //Update location of new Element parameter
+                cls_Common.txtElementHeight = (count * 20) + 70;
+                //Update param Count
+                cls_Common.paramCount++;
             }
-            else if (uc_Ele.ID == 2)
+            else
             {
-                var tempEle = ucLists.ElementResps.Where(i => i.parentid == parentId).FirstOrDefault();
-                if (tempEle != null)
-                {
-                    //tempEle.ucSubLists.TypeId = (int)TypeEnum.Commplex;
-                    if (tempEle.Param != null && tempEle.Param.ParamLists.Count > 0)
-                    {
-                        int count = tempEle.Param.ParamLists.Count;
-                        //Update location of new Element parameter
-                        cls_Common.txtElementHeight = (count * 20) + 70;
-                        //Update param Count
-                        cls_Common.paramCount++;
-                    }
-                    else
-                    {
-                        //Inilization location of new Element parameter
-                        cls_Common.txtElementHeight = 70;
-                        //Inilization param Count
-                        cls_Common.paramCount = 1;
-                    }
-                    var lblElement = new Label
-                    {
-                        //Text = "+  " +  cls_Common.paramCount + " : " + uc_Ele.ResponseDataType,
-                        Width = 182,
-                        Height = 20,
-                    };
-                    lblElement.Click += _Main.AddElementProperty_Click;
-                    uc_Ele.Controls.Add(lblElement);
-                    //Add location of new Element
-                    lblElement.Location = new Point(0, cls_Common.txtElementHeight);
-                    //Update Complex Element in Main.panel_load
-                    _Main.panelType.Controls.Add(uc_Ele);
-                    //Add new Element parameter in Element
-                    if (tempEle.Param == null || tempEle.Param.ParamLists == null)
-                    {
-                        tempEle.Param = new ucParamLists();
-                        tempEle.Param.ParamLists = new List<uc_Element>();
-                    }
-                    uc_Ele.Parentid = parentId;
-                    var itmen = new uc_Element
-                    {
-                        ID = 2,
-                        ParamName = uc_Ele.paramName,
-                        dataType = uc_Ele.dataType,
-                    };
-                    tempEle.Param.ParamLists.Add(itmen);
-                }
+                //Inilization location of new Element parameter
+                cls_Common.txtElementHeight = 70;
+                //Inilization param Count
+                cls_Common.paramCount = 1;
             }
+            var lblElement = new Label
+            {
+                Text = "+  " + _Element.Name1 + " : " + _Element.DataType,
+                Width = 182,
+                Height = 20,
+            };
+            uc_Ele.Controls.Add(lblElement);
+            //Add location of new Element
+            lblElement.Location = new Point(0, cls_Common.txtElementHeight);
+            //Update Complex Element in Main.panel_load
+            _Main.panelType.Controls.Add(uc_Ele);
+            if(uc_Ele.Param == null)
+            {
+               
+                uc_Ele.Param = new ucParamLists();
+            }
+            uc_Ele.Param.ParamLists.Add(_Element);
         }
     }
 }

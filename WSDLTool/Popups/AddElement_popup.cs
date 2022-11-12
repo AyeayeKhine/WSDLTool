@@ -26,7 +26,8 @@ namespace WSDLTool.Popups
          };
         public EleValueType eleValue;
         public int ID;
-        public int ParentId =0;
+        public int ParentId = 0;
+        public int selectId = 0;
         public AddElement_popup()
         {
             InitializeComponent();
@@ -105,7 +106,6 @@ namespace WSDLTool.Popups
         private void type_browse_Click(object sender, EventArgs e)
         {
             ShowType showType = new ShowType();
-            // ShowElement showElement = new ShowElement(this);
             showType.ShowDialog();
         }
         private void ckNestedType_CheckedChanged(object sender, EventArgs e)
@@ -210,54 +210,96 @@ namespace WSDLTool.Popups
         {
 
         }
-
         private void btnSaveChild_Click(object sender, EventArgs e)
         {
             var uc_ele = new uc_Element();
             var parent_ele = new uc_Element();
-            //Check ValueType
-            if (rDefault.Checked)
+            if (selectId == 0)
             {
-                eleValue = EleValueType.Default;
-            }
-            else if (rFixed.Checked)
-            {
-                eleValue = EleValueType.Fixed;
-            }
-            else
-            {
-                eleValue = EleValueType.Unknow;
-            }
-            //Check Simple/Complex Element
-            if (ckNestedType.Checked)
-            {
-                uc_ele = new uc_Element()
+                //Check ValueType
+                if (rDefault.Checked)
                 {
-                    ID = cls_Common.ChildEleId,
-                    Name1 = txtElementName.Text,
-                    IsComplexType = true,
-                };
+                    eleValue = EleValueType.Default;
+                }
+                else if (rFixed.Checked)
+                {
+                    eleValue = EleValueType.Fixed;
+                }
+                else
+                {
+                    eleValue = EleValueType.Unknow;
+                }
+                //Check Simple/Complex Element
+                if (ckNestedType.Checked)
+                {
+                    uc_ele = new uc_Element()
+                    {
+                        ID = cls_Common.ChildEleId,
+                        Name1 = txtElementName.Text,
+                        IsComplexType = true,
+                    };
 
+                }
+                else
+                {
+                    uc_ele = CloneElement(cls_Common.ChildEleId);
+                }
+                cls_Common.ChildEleId++;
             }
             else
             {
-                uc_ele = CloneElement(cls_Common.ChildEleId);
+                uc_ele = ucLists.Elements.Where(ele => ele.ID == selectId && ele.IsComplexType == false).FirstOrDefault();
             }
-            cls_Common.ChildEleId++;
+            this.Close();
             parent_ele = ucLists.Elements.Where(ele => ele.ID == ParentId).FirstOrDefault();
-            //if(parent_ele.Param)
             uc_Element uc_ = new uc_Element(mainForm, controls,uc_ele); 
             
         }
-
         private void btn_definedType_Click(object sender, EventArgs e)
         {
             ShowType showType = new ShowType(this);
             showType.ShowDialog();
         }
-        private void cboBuiltin_type_SelectedIndexChanged(object sender, EventArgs e)
+        private void cboBuiltin_type_TextChanged(object sender, EventArgs e)
         {
-             string ss = (string)cboBuiltin_type.SelectedItem;
+            string ss = (string)cboBuiltin_type.SelectedItem;
+            if(ss != null)
+            {
+                ckNestedType.Visible = true;
+                selectId = 0;
+                if (ckNestedType.Checked)
+                {
+                    gpBoxElement.Visible = false;
+                    gpBoxType.Visible = true;
+                    gpBoxElement.Location = new Point(12, 233);
+                    lblType.Visible = false;
+                    cboBuiltin_type.Visible = false;
+                    btn_definedType.Visible = false;
+                    this.Size = new Size(355, 270);
+                }
+                else
+                {
+                    gpBoxElement.Visible = true;
+                    gpBoxType.Visible = false;
+                    lblType.Visible = true;
+                    cboBuiltin_type.Visible = true;
+                    btn_definedType.Visible = true;
+                    gpBoxElement.Location = new Point(12, 138);
+                    this.Size = new Size(355, 500);
+                }
+            }
+            else
+            {
+                gpBoxElement.Visible = false;
+                lblType.Visible = false;
+                cboBuiltin_type.Visible = true;
+                btn_definedType.Visible = true;
+                lblType.Visible = true;
+                btn_definedType.Visible = true;
+                gpBoxType.Visible = false;
+                ckNestedType.Visible = false;
+                this.Size = new Size(355, 182);
+            }
         }
     }
 }

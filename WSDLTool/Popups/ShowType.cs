@@ -31,12 +31,13 @@ namespace WSDLTool.Popups
         {
             string selectEle = typeviews.SelectedNode.Text;
             mainform.cboBuiltin_type.Text = selectEle;
+            mainform.selectId = int.Parse(typeviews.SelectedNode.Name);
             this.Close();
         }
 
         private void GetType()
         {
-            var resEle = ucLists.Elements.ToList();
+            var resEle = ucLists.Elements.Where(ele => ele.IsComplexType == false).ToList();
             var childNode = typeviews.Nodes[0];
             childNode.Nodes.Clear();
             foreach (var ele in resEle)
